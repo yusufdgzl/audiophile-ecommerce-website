@@ -2,20 +2,22 @@ import Image from "next/image";
 
 export default function MainHero() {
   return (
-    <div className="flex w-full contrast-[0.9] justify-center pb-20  absolute top-0 bg-[#0C0C0C] xl:px-48">
-      <div className=" relative xl:flex xl:w-full xl:space-x-32  ">
-        <div className="absolute flex flex-col px-20 space-y-6 justify-center -translate-y-10 h-full text-center  z-10 text-white xl:relative xl:max-w-sm xl:text-left xl:items-start xl:px-0 ">
-          <h2>NEW PRODUCT</h2>
-          <h1>XX99 MARK II HEADPHONE</h1>
-          <p>
+    <div className="flex w-full  contrast-[0.9] justify-center absolute top-0 bg-[#0C0C0C]  xl:h-screen ">
+      <div className=" relative pt-16 h-[580px] overflow-hidden w-full items-center justify-center flex xl:space-x-20 xl:max-w-[1100px] xl:pt-24 xl:justify-normal ">
+        <div className="absolute flex flex-col px-20 space-y-6 justify-center items-center  h-full text-center z-10 text-white xl:relative w-[420px] xl:text-left xl:items-start xl:px-0 ">
+          <h2 className="opacity-40 tracking-[8px]">NEW PRODUCT</h2>
+          <h1 className="text-3xl font-semibold xl:text-5xl">XX99 MARK II HEADPHONE</h1>
+          <p className="opacity-70 xl:text-sm xl:max-w-[320px]">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button>SEE PRODUCT</button>
+          <button className="bg-[#f6874b] font-semibold px-6 py-2 xl:py-3 hover:bg-[#FBAD83] transition-all text-sm">
+            SEE PRODUCT
+          </button>
         </div>
         <Image
           src="/images/image-hero.jpg"
-          className="w-[500px] h-[650px] scale-125  pt-10  "
+          className="w-[500px] max-h-[700px] scale-[1.2]  pt-10 "
           alt="hero mobile"
           width={4000}
           height={4000}

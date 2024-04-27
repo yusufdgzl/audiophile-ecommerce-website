@@ -19,42 +19,33 @@ export default function MainHeader() {
         </div>
 
         <div className="hidden md:flex text-[12px] tracking-[0.2rem] justify-center w-full  space-x-8">
-          <div className="flex flex-col group">
-            <Link
-              className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
-              href="/"
-            >
-              HOME
-            </Link>
-            <span className="group-hover:border-b mx-3 translate-y-1 "></span>
-          </div>
-          <div className="flex flex-col group">
-            <Link
-              className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
-              href="/headphones"
-            >
-              HEADPHONES
-            </Link>
-            <span className="group-hover:border-b mx-5 translate-y-1"></span>
-          </div>
-          <div className="flex flex-col group">
-            <Link
-              className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
-              href="/speakers"
-            >
-              SPEAKERS
-            </Link>
-            <span className="group-hover:border-b mx-5 translate-y-1"></span>
-          </div>
-          <div className="flex flex-col group">
-            <Link
-              className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
-              href="/earphones"
-            >
-              EARPHONES
-            </Link>
-            <span className="group-hover:border-b mx-5 translate-y-1"></span>
-          </div>
+          <Link
+            className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
+            href="/"
+          >
+            HOME
+          </Link>
+
+          <Link
+            className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
+            href="/category/headphones"
+          >
+            HEADPHONES
+          </Link>
+
+          <Link
+            className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
+            href="/category/speakers"
+          >
+            SPEAKERS
+          </Link>
+
+          <Link
+            className="hover:text-[#b36042] focus:text-[#b36042] duration-300"
+            href="/category/earphones"
+          >
+            EARPHONES
+          </Link>
         </div>
         <div className="flex  md:justify-end  md:w-full">
           <IoCartOutline className="hover:text-[#b36042]  duration-300" />

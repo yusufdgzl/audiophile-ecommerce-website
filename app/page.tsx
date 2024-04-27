@@ -1,8 +1,10 @@
+import MainHero from "@/components/main/MainHero";
 
-export default function Home(){
-  return(
+
+export default function Home() {
+  return (
     <div>
-     <h1>HomePage</h1>
+      <MainHero/>
     </div>
-  )
+  );
 }

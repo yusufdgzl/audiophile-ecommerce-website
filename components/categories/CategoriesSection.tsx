@@ -10,12 +10,12 @@ export default function CategoriesSection(){
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
               src="/images/headphone.png"
-              className="absolute -top-16"
+              className="absolute md:w-[250px] -top-16"
               width={200}
               height={200}
               alt="headphone"
             />
-            <h2 className="pt-12 tracking-wider text-sm">HEADPHONES</h2>
+            <h2 className="pt-12 md:pt-24 tracking-wider text-sm font-semibold">HEADPHONES</h2>
             <div className="flex items-center space-x-2">
               <p className="text-sm font-semibold opacity-60 group-hover:text-[#e38962] group-hover:opacity-100">
                 SHOP
@@ -25,16 +25,16 @@ export default function CategoriesSection(){
           </div>
         </Link>
 
-        <Link href="/category/headphones">
+        <Link href="/category/speakers">
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
-              src="/images/headphone.png"
-              className="absolute -top-16"
+              src="/images/speakers.png"
+              className="absolute md:w-[250px] -top-24"
               width={200}
               height={200}
-              alt="headphone"
+              alt="speakers"
             />
-            <h2 className="pt-12 tracking-wider text-sm">HEADPHONES</h2>
+            <h2 className="pt-12 md:pt-24 tracking-wider text-sm font-semibold">SPEAKERS</h2>
             <div className="flex items-center space-x-2">
               <p className="text-sm font-semibold opacity-60 group-hover:text-[#e38962] group-hover:opacity-100">
                 SHOP
@@ -44,16 +44,16 @@ export default function CategoriesSection(){
           </div>
         </Link>
 
-        <Link href="/category/headphones">
+        <Link href="/category/earphones">
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
-              src="/images/headphone.png"
-              className="absolute -top-16"
+              src="/images/earphone.png"
+              className="absolute md:w-[250px] -top-16"
               width={200}
               height={200}
-              alt="headphone"
+              alt="earphone"
             />
-            <h2 className="pt-12 tracking-wider text-sm">HEADPHONES</h2>
+            <h2 className="pt-12 md:pt-24 tracking-wider text-sm font-semibold">EARPHONES</h2>
             <div className="flex items-center space-x-2">
               <p className="text-sm font-semibold opacity-60 group-hover:text-[#e38962] group-hover:opacity-100">
                 SHOP

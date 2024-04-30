@@ -24,7 +24,7 @@ export default function MainHeader() {
         {isVisibleMenu && (
           <div onClick={menuHandler} className=" absolute bg-black h-[3000px] bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10 md:hidden">
             <div
-              className={`bg-white overflow-hidden  duration-500 transition-transform  pt-20 z-20 ${
+              className={`bg-white overflow-hidden  duration-300 transition-transform  pt-20 z-20 ${
                 menuAnimation ? "translate-y-0" : "-translate-y-[1000px]"
               }`}
             >

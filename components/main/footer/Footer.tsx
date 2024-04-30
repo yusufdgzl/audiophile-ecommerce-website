@@ -22,19 +22,19 @@ export default function Footer() {
           </Link>
           <Link
             className="font-bold text-sm hover:text-[#D97E4A] transition-all"
-            href="/"
+            href="/category/headphones"
           >
             HEADPHONES
           </Link>
           <Link
             className="font-bold text-sm hover:text-[#D97E4A] transition-all"
-            href="/"
+            href="/category/speakers"
           >
             SPEAKERS
           </Link>
           <Link
             className="font-bold text-sm hover:text-[#D97E4A] transition-all"
-            href="/"
+            href="/category/earphones"
           >
             EARPHONES
           </Link>

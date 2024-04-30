@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AudioGearHero from "./AudioGearHero";
 
 export default function MainSectionHeros() {
   return (
@@ -58,9 +59,11 @@ export default function MainSectionHeros() {
 
         <div className=" justify-between items-start flex flex-col h-44 md:h-full bg-gray-200 rounded-xl  p-6 py-8 md:px-24 md:py-16   ">
           <h2 className="text-2xl font-semibold tracking-wider md:text-3xl">YX1 EARPHONES</h2>
-          <button className="border border-black px-6 py-3 text-sm font-semibold hover:bg-black hover:text-white md:px-8">SEE PRODUCT</button>
+          <button className="border border-black px-8 py-3 text-sm font-semibold hover:bg-black hover:text-white ">SEE PRODUCT</button>
         </div>
       </div>
+
+      <AudioGearHero/>
     </div>
   );
 }

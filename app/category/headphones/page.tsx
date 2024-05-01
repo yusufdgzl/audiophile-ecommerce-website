@@ -34,7 +34,7 @@ export default function HeadPhones() {
     queryFn: getProducts,
   });
 
-  
+  const headphones = data?.filter((item)=> item.type === "headphones");
 
   return (
     <>
@@ -43,9 +43,9 @@ export default function HeadPhones() {
           HEADPHONES
         </h1>
       </div>
-      <div className="max-w-[1400px] mx-auto ">
-        <div className=" -space-y-40">
-          {data?.map((item) => (
+      <div className="max-w-[1300px] mx-auto ">
+        <div className=" ">
+          {headphones?.map((item) => (
           <ProductCard key={item.id} {...item}/>
           ))}
         </div>

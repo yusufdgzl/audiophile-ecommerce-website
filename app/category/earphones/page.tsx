@@ -1,7 +1,22 @@
+"use client";
+
 import CategoriesSection from "@/components/categories/CategoriesSection";
 import AudioGearHero from "@/components/main/section/AudioGearHero";
+import { ProductsType } from "../headphones/page";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "@/components/util/http";
+import ProductCard from "@/components/products/ProductCard";
+
 
 export default function EarPhones() {
+
+  const { data, isPending, isError, error } = useQuery<ProductsType[]>({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  const earphones = data?.filter((item)=> item.type === "earphones");
+
   return (
     <>
       <div className="flex flex-col ">
@@ -10,7 +25,11 @@ export default function EarPhones() {
         </h1>
       </div>
       <div className="max-w-[1400px] mx-auto">
-        <div></div>
+        <div>
+        {earphones?.map((item) => (
+          <ProductCard key={item.id} {...item}/>
+          ))}
+        </div>
         <div className="px-6 pt-40">
           <CategoriesSection/>
           <AudioGearHero />

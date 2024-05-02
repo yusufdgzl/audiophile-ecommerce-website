@@ -25,6 +25,9 @@ export type ProductsType = {
   };
   images: {
     main: string;
+    gallery1: string;
+    gallery2: string;
+    gallery3: string;
   };
 };
 

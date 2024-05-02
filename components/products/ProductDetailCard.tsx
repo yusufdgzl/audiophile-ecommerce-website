@@ -59,6 +59,33 @@ export default function ProductDetailCard(props: ProductsType) {
           </div>
         </div>
       </div>
+
+      <div className="flex justify-between space-x-6 py-10">
+        <div className="flex flex-col space-y-6 justify-between">
+          <Image
+            className=" rounded-xl "
+            src={images.gallery1}
+            width={480}
+            height={480}
+            alt={title}
+          />
+          <Image
+            className="rounded-xl"
+            src={images.gallery2}
+            width={480}
+            height={480}
+            alt={title}
+          />
+        </div>
+
+        <Image
+          className="rounded-xl "
+          src={images.gallery3}
+          width={660}
+          height={660}
+          alt={title}
+        />
+      </div>
     </div>
   );
 }

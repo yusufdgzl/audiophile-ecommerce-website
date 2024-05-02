@@ -14,7 +14,10 @@
       "travelBag": 1
     },
     "images": {
-        "main": "/images/product-images/headphones/xx99-2/xx99-mark-ii-headphones.jpg"
+        "main": "/images/product-images/headphones/xx99-2/xx99-mark-ii-headphones.jpg",
+        "gallery1": "/images/product-images/headphones/xx99-2/xx99-mark-ii-headphones-gallery-1.jpg",
+        "gallery2": "/images/product-images/headphones/xx99-2/xx99-mark-ii-headphones-gallery-2.jpg",
+        "gallery3": "/images/product-images/headphones/xx99-2/xx99-mark-ii-headphones-gallery-3.jpg"
     }
   },
   {
@@ -32,7 +35,10 @@
       "travelBag": 1
     },
     "images": {
-      "main": "/images/product-images/headphones/xx99-1/xx99-mark-i-headphones.jpg"
+      "main": "/images/product-images/headphones/xx99-1/xx99-mark-i-headphones.jpg",
+      "gallery1": "/images/product-images/headphones/xx99-1/xx99-mark-i-headphones-gallery-1.jpg",
+      "gallery2": "/images/product-images/headphones/xx99-1/xx99-mark-i-headphones-gallery-2.jpg",
+      "gallery3": "/images/product-images/headphones/xx99-1/xx99-mark-i-headphones-gallery-3.jpg"
     }
   },
   {
@@ -50,7 +56,10 @@
       "travelBag": 1
     },
     "images": {
-      "main": "/images/product-images/headphones/xx59/xx59-headphones.jpg"
+      "main": "/images/product-images/headphones/xx59/xx59-headphones.jpg",
+      "gallery1": "/images/product-images/headphones/xx59/xx59-headphones-gallery-1.jpg",
+      "gallery2": "/images/product-images/headphones/xx59/xx59-headphones-gallery-2.jpg",
+      "gallery3": "/images/product-images/headphones/xx59/xx59-headphones-gallery-3.jpg"
     }
   },
   {
@@ -68,7 +77,10 @@
       "travelBag": 1
     },
     "images": {
-      "main": "/images/product-images/speakers/zx7/zx7-speaker.jpg"
+      "main": "/images/product-images/speakers/zx7/zx7-speaker.jpg",
+      "gallery1": "/images/product-images/speakers/zx7/zx7-speaker-gallery-1.jpg",
+      "gallery2": "/images/product-images/speakers/zx7/zx7-speaker-gallery-2.jpg",
+      "gallery3": "/images/product-images/speakers/zx7/zx7-speaker-gallery-3.jpg"
     }
   },
   {
@@ -86,7 +98,10 @@
       "travelBag": 1
     },
     "images": {
-      "main": "/images/product-images/speakers/zx9/zx9-speaker.jpg"
+      "main": "/images/product-images/speakers/zx9/zx9-speaker.jpg",
+      "gallery1": "/images/product-images/speakers/zx9/zx9-speaker-gallery-1.jpg",
+      "gallery2": "/images/product-images/speakers/zx9/zx9-speaker-gallery-2.jpg",
+      "gallery3": "/images/product-images/speakers/zx9/zx9-speaker-gallery-3.jpg"
     }
   },
   {
@@ -104,7 +119,10 @@
       "travelBag": 1
     },
     "images": {
-      "main": "/images/product-images/earphones/yx1/yx1-wireless-earphones.jpg"
+      "main": "/images/product-images/earphones/yx1/yx1-wireless-earphones.jpg",
+      "gallery1": "/images/product-images/earphones/yx1/yx1-wireless-earphones-gallery-1.jpg",
+      "gallery2": "/images/product-images/earphones/yx1/yx1-wireless-earphones-gallery-2.jpg",
+      "gallery3": "/images/product-images/earphones/yx1/yx1-wireless-earphones-gallery-3.jpg"
     }
   }
 ]

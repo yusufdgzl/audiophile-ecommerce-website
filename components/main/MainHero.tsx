@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MainHero() {
   return (
@@ -11,9 +12,9 @@ export default function MainHero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="bg-[#f6874b] font-semibold px-6 py-2 xl:py-3 hover:bg-[#FBAD83] transition-all text-sm">
+          <Link href="/product/1" className="bg-[#f6874b] font-semibold px-6 py-2 xl:py-3 hover:bg-[#FBAD83] transition-all text-sm">
             SEE PRODUCT
-          </button>
+          </Link>
         </div>
         <Image
           src="/images/image-hero.jpg"

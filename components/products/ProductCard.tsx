@@ -1,5 +1,6 @@
 import { ProductsType } from "@/app/category/headphones/page";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductCard(props: ProductsType) {
 
@@ -23,7 +24,7 @@ export default function ProductCard(props: ProductsType) {
       <div className="flex flex-col items-center justify-center text-center space-y-6 mx-auto py-4  md:max-w-[500px] md:items-start md:text-left">
         <h2 className="text-3xl font-semibold max-w-[300px] md:max-w-[350px] md:text-5xl ">{title}</h2>
         <p className="text-md max-w-[380px] md:max-w-none md:text-xl opacity-60">{description}</p>
-        <button className="btn-orange">SEE PRODUCT</button>
+        <Link href={`/product/${id}`} className="btn-orange">SEE PRODUCT</Link>
       </div>
     
     </div>

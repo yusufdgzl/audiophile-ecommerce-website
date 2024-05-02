@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AudioGearHero from "./AudioGearHero";
+import Link from "next/link";
 
 export default function MainSectionHeros() {
   return (
@@ -22,18 +23,18 @@ export default function MainSectionHeros() {
             Upgrade to premium spekers that are phenomenally built to deliver
             truly remarkable sound
           </p>
-          <button className="bg-black font-semibold text-sm px-8 py-3 hover:bg-[#353333]">
+          <Link href="/product/4" className="bg-black font-semibold text-sm px-8 py-3 hover:bg-[#353333]">
             SEE PRODUCT
-          </button>
+          </Link>
         </div>
       </div>
 
       <div className="flex relative bg-slate-200 py-24  rounded-xl items-center justify-between pl-10 overflow-hidden ">
         <div className="min-w-[160px] space-y-6 md:pl-20">
-          <h2 className="text-2xl font-semibold tracking-wider">ZX7 SPEAKER</h2>
-          <button className="border border-black px-8 py-3 text-sm font-semibold hover:text-white hover:bg-black">
+          <h2 className="text-2xl font-semibold tracking-wider mb-8">ZX7 SPEAKER</h2>
+          <Link href="/product/5" className="border border-black  px-8 py-3 text-sm font-semibold hover:text-white hover:bg-black">
             SEE PRODUCT
-          </button>
+          </Link>
         </div>
         <div className="absolute -right-28 md:-right-4 md:-top-40 lg:-top-[460px]">
           <Image
@@ -59,7 +60,7 @@ export default function MainSectionHeros() {
 
         <div className=" justify-between items-start flex flex-col h-44 md:h-full bg-gray-200 rounded-xl  p-6 py-8 md:px-24 md:py-16   ">
           <h2 className="text-2xl font-semibold tracking-wider md:text-3xl">YX1 EARPHONES</h2>
-          <button className="border border-black px-8 py-3 text-sm font-semibold hover:bg-black hover:text-white ">SEE PRODUCT</button>
+          <Link href="/product/6" className="border border-black px-8 py-3 text-sm font-semibold hover:bg-black hover:text-white ">SEE PRODUCT</Link>
         </div>
       </div>
 

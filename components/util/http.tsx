@@ -18,3 +18,17 @@ export async function getProducts(){
     return data;
 
 }
+
+export async function getProduct({id}: {id:string | string[] }){
+
+    const response = await fetch(`/api/${id}`);
+    
+    if( !response ){
+        throw new Error('getProduct işlevinden dönüş alınamadi');
+    }
+
+    const data = response.json();
+
+    return data;
+
+}

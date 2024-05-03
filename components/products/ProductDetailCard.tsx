@@ -1,6 +1,9 @@
 import { ProductsType } from "@/app/category/headphones/page";
 import Image from "next/image";
 import Link from "next/link";
+import CategoriesSection from "../categories/CategoriesSection";
+import AudioGearHero from "../main/section/AudioGearHero";
+import AlsoLikeProducts from "./AlsoLikeProducts";
 
 export default function ProductDetailCard(props: ProductsType) {
   const { description, features, images, inTheBox, price, title, type, id } =
@@ -60,31 +63,40 @@ export default function ProductDetailCard(props: ProductsType) {
         </div>
       </div>
 
-      <div className="flex justify-between space-x-6 py-10">
+      <div className="py-10 space-y-8 md:flex md:justify-between md:items-center md:space-y-0 md:space-x-6 md:py-10">
         <div className="flex flex-col space-y-6 justify-between">
           <Image
-            className=" rounded-xl "
+            className="h-60 rounded-xl md:h-auto "
             src={images.gallery1}
-            width={480}
-            height={480}
+            width={500}
+            height={500}
             alt={title}
           />
           <Image
-            className="rounded-xl"
+            className="h-60 rounded-xl md:h-auto"
             src={images.gallery2}
-            width={480}
-            height={480}
+            width={500}
+            height={500}
             alt={title}
           />
         </div>
 
         <Image
-          className="rounded-xl "
+          className=" rounded-xl  "
           src={images.gallery3}
-          width={660}
-          height={660}
+          width={700}
+          height={700}
           alt={title}
         />
+      </div>
+
+      <div>
+        <AlsoLikeProducts/>
+      </div>
+
+      <div className="px-6 pt-40">
+        <CategoriesSection />
+        <AudioGearHero />
       </div>
     </div>
   );

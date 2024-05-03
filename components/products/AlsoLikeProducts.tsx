@@ -22,7 +22,7 @@ export default function AlsoLikeProducts() {
       <h2 className="text-3xl font-semibold text-center py-6 md:mt-16">
         YOU MAY ALSO LİKE
       </h2>
-      <div className="grid md:grid-cols-3 mb-14 p-4 space-y-10 h-[1500px]  md:h-[530px] gap-2  overflow-hidden md:space-y-0 md:py-20">
+      <div className="grid md:grid-cols-3  p-4 space-y-10 h-[1500px]  md:h-[530px] gap-2 overflow-hidden md:mb-14 md:space-y-0 md:py-20">
         {isNotExists?.map((item) => (
           <div
             key={item.id}

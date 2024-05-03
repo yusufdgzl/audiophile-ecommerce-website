@@ -94,7 +94,7 @@ export default function ProductDetailCard(props: ProductsType) {
         <AlsoLikeProducts/>
       </div>
 
-      <div className="px-6 pt-40">
+      <div className="px-6 pt-24 md:pt-40">
         <CategoriesSection />
         <AudioGearHero />
       </div>

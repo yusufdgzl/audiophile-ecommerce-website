@@ -5,7 +5,7 @@ import { GoChevronRight } from "react-icons/go";
 
 export default function CategoriesSection(){
     return(
-        <div className="grid space-y-14 gap-4 pb-20 px-4 md:grid-cols-3 md:space-y-0 ">
+        <div className="grid space-y-14 gap-4  px-4 md:grid-cols-3 md:space-y-0 ">
         <Link href="/category/headphones">
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image

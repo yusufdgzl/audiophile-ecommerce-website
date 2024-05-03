@@ -2,8 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* buttons */
+
 @layer components {
    .btn-orange {
     @apply bg-[#ef833f] text-white px-8 py-3 hover:bg-[#f5af81] transition-all duration-300;
    }
 }
+
+/* // */
+
+
+ /* inputs & labels */
+
+@layer components {
+   .form-input {
+      @apply border border-gray-300 px-4 py-3 rounded-lg placeholder:text-gray-400 font-semibold outline-0 focus:border-orange-600;
+   }
+}
+
+@layer components {
+   .form-label {
+      @apply text-xs font-semibold;
+   }
+}
+
+/* // */
+

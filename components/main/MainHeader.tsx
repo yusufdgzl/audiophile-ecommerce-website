@@ -77,9 +77,9 @@ export default function MainHeader() {
             EARPHONES
           </Link>
         </div>
-        <div className="flex  md:justify-end  md:w-full">
+        <Link href="/checkout" className="flex  md:justify-end  md:w-full">
           <IoCartOutline className="hover:text-[#b36042]  duration-300" />
-        </div>
+        </Link>
       </div>
     </div>
   );

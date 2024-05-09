@@ -7,6 +7,7 @@ import MainHeader from "@/components/main/MainHeader";
 import Footer from "@/components/main/footer/Footer";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/components/util/http";
+import StoreProvider from "./StoreProvider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,13 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        
+        <StoreProvider>
           <QueryClientProvider client={queryClient}>
             <MainHeader />
             {children}
             <Footer />
           </QueryClientProvider>
-        
+          </StoreProvider>       
       </body>
     </html>
   );

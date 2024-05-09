@@ -1,13 +1,23 @@
+'use client'
+
 import { ProductsType } from "@/app/category/headphones/page";
 import Image from "next/image";
 import Link from "next/link";
 import CategoriesSection from "../categories/CategoriesSection";
 import AudioGearHero from "../main/section/AudioGearHero";
 import AlsoLikeProducts from "./AlsoLikeProducts";
+import { useAppDispatch } from "@/lib/hooks";
+import { cartSlice } from "@/lib/features/cart/cartSlice";
 
 export default function ProductDetailCard(props: ProductsType) {
   const { description, features, images, inTheBox, price, title, type, id } =
     props;
+
+    const dispatch = useAppDispatch();
+
+    function addItemHandler(){
+      dispatch(cartSlice.actions.addItemToCart(props))
+    }
 
   return (
     <div className="flex flex-col px-6 max-w-[1200px] mx-auto">
@@ -43,7 +53,7 @@ export default function ProductDetailCard(props: ProductsType) {
               />
               <button>+</button>
             </div>
-            <button className="btn-orange">ADD TO CART</button>
+            <button onClick={addItemHandler} className="btn-orange">ADD TO CART</button>
           </div>
         </div>
       </div>

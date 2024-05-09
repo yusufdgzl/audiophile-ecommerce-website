@@ -6,8 +6,11 @@ import { useAppSelector } from "@/lib/hooks";
 export default function CartSummary() {
 
   const cartTotal = useAppSelector((state)=> state.cart.total);
+  const cartItems = useAppSelector((state)=> state.cart.items);
 
-  console.log(cartTotal)
+
+
+  console.log(cartItems)
  
 
   return (

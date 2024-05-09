@@ -14,6 +14,7 @@ export default function ProductDetail() {
     queryFn: () => getProduct({ id: params.detail }),
   });
 
+
   let content;
 
   if (isPending) {

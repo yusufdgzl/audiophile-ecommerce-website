@@ -1,6 +1,11 @@
+
+
 export default function CartSummary() {
+
+ 
+
   return (
-    <div className="bg-white space-y-6 p-6  md:w-[350px] rounded-xl ">
+    <div className="bg-white space-y-6 p-6  lg:w-[350px] rounded-xl ">
       <h2 className="text-lg font-semibold">SUMMARY</h2>
       <div className="space-y-2">
         <div className="flex justify-between">

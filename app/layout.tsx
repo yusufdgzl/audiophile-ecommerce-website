@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -5,6 +7,7 @@ import MainHeader from "@/components/main/MainHeader";
 import Footer from "@/components/main/footer/Footer";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/components/util/http";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <QueryClientProvider client={queryClient}>
-          <MainHeader />
-          {children}
-          <Footer />
-        </QueryClientProvider>
+        
+          <QueryClientProvider client={queryClient}>
+            <MainHeader />
+            {children}
+            <Footer />
+          </QueryClientProvider>
+        
       </body>
     </html>
   );

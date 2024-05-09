@@ -23,6 +23,7 @@ export default function ProductDetailCard(props: ProductsType) {
           width={500}
           height={500}
           alt="audio gear"
+          priority
         />
         <div className="flex flex-col items-left justify-center text-left space-y-6 mx-auto py-4  md:max-w-[500px] md:items-start md:text-left">
           <h2 className="text-3xl font-semibold  md:max-w-[350px] md:text-5xl ">

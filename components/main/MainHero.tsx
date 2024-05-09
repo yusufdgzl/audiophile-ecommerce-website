@@ -22,6 +22,7 @@ export default function MainHero() {
           alt="hero mobile"
           width={4000}
           height={4000}
+          priority
         />
       </div>
     </div>

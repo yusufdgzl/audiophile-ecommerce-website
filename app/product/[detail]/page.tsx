@@ -33,7 +33,13 @@ export default function ProductDetail() {
   }
 
   if (data) {
-    content = <div>{data.map((item)=> <ProductDetailCard {...item}/>)}</div>;
+    content = (
+      <div>
+        {data.map((item) => (
+          <ProductDetailCard key={item.id} {...item} />
+        ))}
+      </div>
+    );
   }
 
   return <div> {content} </div>;

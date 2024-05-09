@@ -10,7 +10,7 @@ export default function CategoriesSection(){
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
               src="/images/headphone.png"
-              className="absolute md:w-[250px] -top-16"
+              className="absolute md:w-[250px] h-auto -top-16"
               width={200}
               height={200}
               alt="headphone"
@@ -29,7 +29,7 @@ export default function CategoriesSection(){
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
               src="/images/speakers.png"
-              className="absolute md:w-[250px] -top-24"
+              className="absolute md:w-[250px] h-auto -top-24"
               width={200}
               height={200}
               alt="speakers"
@@ -48,7 +48,7 @@ export default function CategoriesSection(){
           <div className="flex flex-col rounded-md justify-center items-center relative py-6 space-y-2 bg-[#dfd5d54b] transition-all group hover:bg-[#eeeeee]">
             <Image
               src="/images/earphone.png"
-              className="absolute md:w-[250px] -top-24 md:-top-24"
+              className="absolute md:w-[250px] h-auto -top-24 md:-top-24"
               width={200}
               height={200}
               alt="earphone"

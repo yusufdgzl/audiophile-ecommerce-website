@@ -4,7 +4,7 @@ export default function AudioGearHero() {
   return (
     <div className=" grid gap-4 py-20 md:py-40 md:grid-cols-2">
       <Image
-        className=" bg-black rounded-xl md:h-[600px] md:w-[1000px]  md:order-2"
+        className=" bg-black rounded-xl md:h-auto md:w-[1000px]  md:order-2"
         src="/images/audio-gear-hero.webp"
         width={700}
         height={600}

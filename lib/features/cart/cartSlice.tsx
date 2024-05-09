@@ -16,7 +16,19 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItemToCart: (state, action) => {
-      state.items = state.items.concat(action.payload); 
+
+      const newItem = action.payload;
+      const existingItem = state.items.find((item)=> item.id === newItem.id);
+      const existingItemIndex = state.items.findIndex((item)=> item.id === newItem.id);
+      
+      if( !existingItem ) {
+        state.items = state.items.concat(newItem); 
+      } else {
+        state.items[existingItemIndex].amount = state.items[existingItemIndex].amount + newItem.amount;
+      }
+
+     
+      
     },
   },
 });

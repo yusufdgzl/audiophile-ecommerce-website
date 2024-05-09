@@ -13,6 +13,7 @@ export type ProductsType = {
   title: string;
   description: string;
   price: number;
+  amount: number;
   type: string;
   id: number;
   features: string;

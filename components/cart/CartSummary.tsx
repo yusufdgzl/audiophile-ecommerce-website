@@ -1,7 +1,13 @@
+'use client'
+
+import { useAppSelector } from "@/lib/hooks";
 
 
 export default function CartSummary() {
 
+  const cartTotal = useAppSelector((state)=> state.cart.total);
+
+  console.log(cartTotal)
  
 
   return (

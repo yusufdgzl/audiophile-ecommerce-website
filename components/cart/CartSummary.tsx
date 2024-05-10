@@ -9,30 +9,34 @@ export default function CartSummary() {
   const cartTotal = useAppSelector((state) => state.cart.total);
   const cartItems = useAppSelector((state) => state.cart.items);
 
-  console.log(cartItems);
+  
+  const vat = cartTotal * 20 / 100;
+
 
   return (
     <div className="bg-white space-y-6 p-6  lg:w-[350px] rounded-xl ">
       <h2 className="text-lg font-semibold">SUMMARY</h2>
 
-      {cartItems.map(item=> <CartProductsItem key={item.id} {...item} />)}
+      {cartItems.map((item) => (
+        <CartProductsItem key={item.id} {...item} />
+      ))}
 
       <div className="space-y-2">
         <div className="flex justify-between">
           <p>TOTAL</p>
-          <p className="font-semibold text-lg">$0</p>
+          <p className="font-semibold text-lg">${cartTotal}</p>
         </div>
         <div className="flex justify-between">
           <p>SHIPPING</p>
-          <p className="font-semibold text-lg">$0</p>
+          <p className="font-semibold text-lg">$50</p>
         </div>
         <div className="flex justify-between">
           <p>VAT (INCLUDED)</p>
-          <p className="font-semibold text-lg">$0</p>
+          <p className="font-semibold text-lg">${vat}</p>
         </div>
         <div className="flex justify-between">
           <p>GRAND TOTAL</p>
-          <p className="font-semibold text-lg">$0</p>
+          <p className="font-semibold text-lg">${cartTotal + 50 + vat}</p>
         </div>
       </div>
       <button className="btn-orange w-full">CONTINUE & PAY</button>

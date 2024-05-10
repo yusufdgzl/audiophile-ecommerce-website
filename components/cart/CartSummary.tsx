@@ -24,7 +24,7 @@ export default function CartSummary() {
       <div className="space-y-2">
         <div className="flex justify-between">
           <p>TOTAL</p>
-          <p className="font-semibold text-lg">${cartTotal}</p>
+          <p className="font-semibold text-lg">${cartTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
         <div className="flex justify-between">
           <p>SHIPPING</p>
@@ -32,11 +32,11 @@ export default function CartSummary() {
         </div>
         <div className="flex justify-between">
           <p>VAT (INCLUDED)</p>
-          <p className="font-semibold text-lg">${vat}</p>
+          <p className="font-semibold text-lg">${vat.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <p>GRAND TOTAL</p>
-          <p className="font-semibold text-lg">${cartTotal + 50 + vat}</p>
+          <p className="font-semibold text-lg text-orange-600">${(cartTotal + 50 + vat).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
       </div>
       <button className="btn-orange w-full">CONTINUE & PAY</button>

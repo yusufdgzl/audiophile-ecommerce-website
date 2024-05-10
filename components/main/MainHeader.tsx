@@ -84,14 +84,16 @@ export default function MainHeader() {
             EARPHONES
           </Link>
         </div>
-        <Link href="/checkout" className="flex  md:justify-end  md:w-full">
-          <div className=" relative">
-            <span className="absolute -left-5 -top-5 text-sm bg-orange-500 w-8 h-8 flex items-center justify-center rounded-full bg-opacity-40">
+        
+          <div className="  flex  md:justify-end  md:w-full">
+          <Link href="/checkout" className="relative">
+           {totalAmount > 0 && <span className="absolute -left-5 -top-5 text-sm bg-orange-500 w-8 h-8 flex items-center justify-center rounded-full bg-opacity-40">
               {totalAmount}
-            </span>
+            </span>}
             <IoCartOutline className="hover:text-[#b36042]  duration-300" />
+            </Link>
           </div>
-        </Link>
+        
       </div>
     </div>
   );

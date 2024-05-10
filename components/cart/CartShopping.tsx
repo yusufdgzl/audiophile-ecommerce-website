@@ -9,9 +9,6 @@ export default function CartShopping() {
   const cartItems = useAppSelector((state) => state.cart.items);
   const cartTotalAmount = useAppSelector((state)=> state.cart.totalAmount)
 
-  
-
-
 
   return (
     <div className="bg-white space-y-6 p-6  lg:w-[350px] rounded-xl ">

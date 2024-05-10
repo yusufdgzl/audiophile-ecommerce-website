@@ -1,21 +1,22 @@
-'use client'
+"use client";
 
 import { useAppSelector } from "@/lib/hooks";
-
+import Image from "next/image";
+import Link from "next/link";
+import CartProductsItem from "./CartProductsItem";
 
 export default function CartSummary() {
+  const cartTotal = useAppSelector((state) => state.cart.total);
+  const cartItems = useAppSelector((state) => state.cart.items);
 
-  const cartTotal = useAppSelector((state)=> state.cart.total);
-  const cartItems = useAppSelector((state)=> state.cart.items);
-
-
-
-  console.log(cartItems)
- 
+  console.log(cartItems);
 
   return (
     <div className="bg-white space-y-6 p-6  lg:w-[350px] rounded-xl ">
       <h2 className="text-lg font-semibold">SUMMARY</h2>
+
+      {cartItems.map(item=> <CartProductsItem key={item.id} {...item} />)}
+
       <div className="space-y-2">
         <div className="flex justify-between">
           <p>TOTAL</p>

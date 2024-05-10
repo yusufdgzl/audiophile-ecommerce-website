@@ -26,9 +26,6 @@ export const cartSlice = createSlice({
       } else {
         state.items[existingItemIndex].amount = state.items[existingItemIndex].amount + newItem.amount;
       }
-
-     
-      
     },
   },
 });

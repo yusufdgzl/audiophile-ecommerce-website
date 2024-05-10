@@ -5,10 +5,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { TiThMenu } from "react-icons/ti";
 import CategoriesSection from "../categories/CategoriesSection";
 import { useState } from "react";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function MainHeader() {
   const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false);
   const [menuAnimation, setMenuAnimation] = useState<boolean>(false);
+
+  const totalAmount = useAppSelector((state)=> state.cart.totalAmount)
+
 
   function menuHandler() {
     setIsVisibleMenu((prev) => !prev);
@@ -22,7 +26,10 @@ export default function MainHeader() {
     <div className="bg-black w-full flex flex-col ">
       <div className="flex w-full relative z-10 justify-between items-center px-8  h-24 text-white text-3xl font-bold border-b  border-opacity-30 border-gray-500 max-w-[1100px] mx-auto xl:p-0">
         {isVisibleMenu && (
-          <div onClick={menuHandler} className=" absolute bg-black h-[3000px] bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10 md:hidden">
+          <div
+            onClick={menuHandler}
+            className=" absolute bg-black h-[3000px] bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10 md:hidden"
+          >
             <div
               className={`bg-white overflow-hidden  duration-300 transition-transform  pt-20 z-20 ${
                 menuAnimation ? "translate-y-0" : "-translate-y-[1000px]"
@@ -78,7 +85,12 @@ export default function MainHeader() {
           </Link>
         </div>
         <Link href="/checkout" className="flex  md:justify-end  md:w-full">
-          <IoCartOutline className="hover:text-[#b36042]  duration-300" />
+          <div className=" relative">
+            <span className="absolute -left-5 -top-5 text-sm bg-orange-500 w-8 h-8 flex items-center justify-center rounded-full bg-opacity-40">
+              {totalAmount}
+            </span>
+            <IoCartOutline className="hover:text-[#b36042]  duration-300" />
+          </div>
         </Link>
       </div>
     </div>

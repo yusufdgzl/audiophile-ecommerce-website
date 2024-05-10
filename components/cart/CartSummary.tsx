@@ -1,8 +1,6 @@
 "use client";
 
 import { useAppSelector } from "@/lib/hooks";
-import Image from "next/image";
-import Link from "next/link";
 import CartProductsItem from "./CartProductsItem";
 
 export default function CartSummary() {

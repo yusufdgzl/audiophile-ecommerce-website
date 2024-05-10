@@ -4,11 +4,13 @@ import { createSlice } from "@reduxjs/toolkit";
 type CartState = {
   items: ProductsType[];
   total: number;
+  totalAmount:number;
 };
 
 const initialState: CartState = {
   items: [],
   total: 0,
+  totalAmount: 0,
 };
 
 export const cartSlice = createSlice({
@@ -21,7 +23,8 @@ export const cartSlice = createSlice({
       const existingItem = state.items.find((item)=> item.id === newItem.id);
       const existingItemIndex = state.items.findIndex((item)=> item.id === newItem.id);
 
-      state.total = state.total + newItem.price * newItem.amount
+      state.total = state.total + newItem.price * newItem.amount;
+      state.totalAmount = state.totalAmount + newItem.amount;
       
       if( !existingItem ) {
         state.items = state.items.concat(newItem); 

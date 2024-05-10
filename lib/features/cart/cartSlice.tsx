@@ -20,30 +20,42 @@ export const cartSlice = createSlice({
     addItemToCart: (state, action) => {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
-      const existingItemIndex = state.items.findIndex(
-        (item) => item.id === newItem.id
-      );
 
-      state.total = state.total + newItem.price * newItem.amount;
-      state.totalAmount = state.totalAmount + newItem.amount;
+      state.total = state.total + newItem.price;
+      state.totalAmount++;
 
       if (!existingItem) {
         state.items = state.items.concat(newItem);
       } else {
-        state.items[existingItemIndex].amount =
-          state.items[existingItemIndex].amount + 1;
+        existingItem.amount++;
       }
     },
+
+
     deleteItemFromCart: (state, action) => {
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
+
       if (existingItem && existingItem.amount !== 0) {
         existingItem.amount = existingItem.amount - 1;
+        state.totalAmount--;
+        state.total = state.total - existingItem.price;
       }
+
       if (existingItem && existingItem.amount === 0) {
         state.items = state.items.filter((item) => item.id !== existingItem.id);
       }
     },
+
+    
+    clearAllCart: (state) => {
+      state.items = [];
+      state.total = 0;
+      state.totalAmount = 0;
+
+    },
+
+
   },
 });
 

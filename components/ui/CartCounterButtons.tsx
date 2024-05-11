@@ -1,23 +1,32 @@
 import { ProductsType } from "@/app/category/headphones/page";
 import { cartSlice } from "@/lib/features/cart/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
+import { ChangeEvent, useState } from "react";
 
 export default function CounterButtons(props: ProductsType) {
+
   const dispatch = useAppDispatch();
 
-  function increaseItemHandler() {
-    dispatch(cartSlice.actions.addItemToCart(props));
+
+  function increaseAmountHandler() {
+    if(props.amount !== 1){
+      dispatch(cartSlice.actions.deleteItemFromCart({
+        ...props,amount: -1
+      }))
+    }
   }
 
-  function decreaseItemHandler() {
-    dispatch(cartSlice.actions.deleteItemFromCart(props));
+  function decreaseAmountHandler() {
+    dispatch(cartSlice.actions.addItemToCart({
+      ...props,amount: 1
+    }))
   }
 
   return (
     <div className="flex flex-col items-end ">
       <div className="bg-gray-200 py-2 px-2 flex justify-around rounded-sm">
         <button
-          onClick={decreaseItemHandler}
+          onClick={increaseAmountHandler}
           className="px-3 hover:text-orange-500"
         >
           -
@@ -32,7 +41,7 @@ export default function CounterButtons(props: ProductsType) {
           />
         </label>
         <button
-          onClick={increaseItemHandler}
+          onClick={decreaseAmountHandler}
           className="px-3 hover:text-orange-500"
         >
           +

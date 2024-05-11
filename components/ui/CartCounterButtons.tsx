@@ -1,25 +1,29 @@
 import { ProductsType } from "@/app/category/headphones/page";
 import { cartSlice } from "@/lib/features/cart/cartSlice";
 import { useAppDispatch } from "@/lib/hooks";
-import { ChangeEvent, useState } from "react";
+
 
 export default function CounterButtons(props: ProductsType) {
-
   const dispatch = useAppDispatch();
 
-
   function increaseAmountHandler() {
-    if(props.amount !== 1){
-      dispatch(cartSlice.actions.deleteItemFromCart({
-        ...props,amount: -1
-      }))
+    if (props.amount !== 1) {
+      dispatch(
+        cartSlice.actions.deleteItemFromCart({
+          ...props,
+          amount: -1,
+        })
+      );
     }
   }
 
   function decreaseAmountHandler() {
-    dispatch(cartSlice.actions.addItemToCart({
-      ...props,amount: 1
-    }))
+    dispatch(
+      cartSlice.actions.addItemToCart({
+        ...props,
+        amount: 1,
+      })
+    );
   }
 
   return (

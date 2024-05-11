@@ -21,13 +21,13 @@ export const cartSlice = createSlice({
       const newItem = action.payload;
       const existingItem = state.items.find((item) => item.id === newItem.id);
 
-      state.total = state.total + newItem.price;
-      state.totalAmount++;
+      state.total = state.total + newItem.price * newItem.amount;
+      state.totalAmount = state.totalAmount + newItem.amount;
 
       if (!existingItem) {
         state.items = state.items.concat(newItem);
       } else {
-        existingItem.amount++;
+        existingItem.amount = existingItem.amount + newItem.amount;
       }
     },
 

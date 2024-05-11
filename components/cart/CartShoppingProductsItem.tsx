@@ -1,14 +1,10 @@
 import { ProductsType } from "@/app/category/headphones/page";
 import Image from "next/image";
 import Link from "next/link";
-import CounterButtons from "../ui/CounterButtons";
+import CartCounterButtons from "../ui/CartCounterButtons";
 
 export default function CartShoppingProductsItem(props: ProductsType) {
-  const { images, title, price, amount, id } = props;
-
-
-  
-
+  const { images, title, price, id } = props;
 
   return (
     <div className="flex justify-between items-center">
@@ -28,7 +24,7 @@ export default function CartShoppingProductsItem(props: ProductsType) {
           <p className=" opacity-60">${price}</p>
         </div>
       </Link>
-      <CounterButtons {...props}/>
+      <CartCounterButtons {...props} />
     </div>
   );
 }

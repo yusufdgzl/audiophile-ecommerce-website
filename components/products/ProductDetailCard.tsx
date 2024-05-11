@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { ProductsType } from "@/app/category/headphones/page";
 import Image from "next/image";
@@ -8,16 +8,36 @@ import AudioGearHero from "../main/section/AudioGearHero";
 import AlsoLikeProducts from "./AlsoLikeProducts";
 import { useAppDispatch } from "@/lib/hooks";
 import { cartSlice } from "@/lib/features/cart/cartSlice";
+import { ChangeEvent, useState } from "react";
 
 export default function ProductDetailCard(props: ProductsType) {
-  const { description, features, images, inTheBox, price, title, type, id } =
-    props;
 
-    const dispatch = useAppDispatch();
+  const [enteredValue,setEnteredValue] = useState<number>(1);
 
-    function addItemHandler(){
-      dispatch(cartSlice.actions.addItemToCart(props))
+  const { description, features, images, inTheBox, price, title, id } = props;
+
+  const dispatch = useAppDispatch();
+
+  function addItemHandler() {
+    dispatch(cartSlice.actions.addItemToCart({
+      ...props,amount:enteredValue
+    }));
+  }
+
+  function increaseAmountHandler() {
+    if(enteredValue !== 1){
+      setEnteredValue((prev) => prev - 1 )
     }
+  }
+
+  function decreaseAmountHandler() {
+    setEnteredValue((prev) => prev + 1 )
+  }
+
+  function counterChangeHandler(event:ChangeEvent<HTMLInputElement>)  {
+    setEnteredValue(+event.target.value);
+  }
+
 
   return (
     <div className="flex flex-col px-6 max-w-[1200px] mx-auto">
@@ -43,17 +63,25 @@ export default function ProductDetailCard(props: ProductsType) {
             {description}
           </p>
           <p className="text-xl font-semibold">${price}</p>
+
           <div className="flex space-x-4">
-            <div className="flex items-center space-x-4 px-4 font-bold bg-gray-200">
-              <button>-</button>
-              <input
-                className="w-10 bg-gray-200 text-center"
-                type="text"
-                defaultValue={1}
-              />
-              <button>+</button>
+            <div className="bg-gray-200 py-2 px-4 flex justify-around items-center rounded-sm">
+              <button onClick={increaseAmountHandler} className="px-3 hover:text-orange-500 text-lg">-</button>
+              <label htmlFor="amount">
+                <input
+                  className=" outline-none bg-gray-200 w-6 text-center "
+                  type="text"
+                  id="amount"
+                  maxLength={2}
+                  value={enteredValue}
+                  onChange={counterChangeHandler}
+                />
+              </label>
+              <button onClick={decreaseAmountHandler} className="px-3 hover:text-orange-500 text-lg">+</button>
             </div>
-            <button onClick={addItemHandler} className="btn-orange">ADD TO CART</button>
+            <button  onClick={addItemHandler} className="btn-orange">
+              ADD TO CART
+            </button>
           </div>
         </div>
       </div>
@@ -102,7 +130,7 @@ export default function ProductDetailCard(props: ProductsType) {
       </div>
 
       <div>
-        <AlsoLikeProducts/>
+        <AlsoLikeProducts />
       </div>
 
       <div className="px-6 pt-24 md:pt-40">

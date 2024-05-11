@@ -47,7 +47,7 @@ export default function MainHeader() {
         )}
 
         {cartIsVisible && (
-          <div className="absolute bg-black h-[3000px]  bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10">
+          <div className="absolute bg-black h-auto bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10">
             <div className="absolute right-0 left-0 px-10 text-sm  py-6 md:left-auto md:right-32 ">
               <CartShopping />
             </div>

@@ -2,6 +2,7 @@
 
 import { ProductsType } from "@/app/category/headphones/page";
 import ProductDetailCard from "@/components/products/ProductDetailCard";
+import LoadingIndicator from "@/components/ui/LoadingIndicator";
 import { getProduct } from "@/components/util/http";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
@@ -20,7 +21,7 @@ export default function ProductDetail() {
   if (isPending) {
     content = (
       <ul>
-        <p>Loading...</p>
+        <LoadingIndicator/>
       </ul>
     );
   }

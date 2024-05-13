@@ -5,7 +5,12 @@ import Link from "next/link";
 import CartShoppingProductsItem from "./CartShoppingProductsItem";
 import { cartSlice } from "@/lib/features/cart/cartSlice";
 
-export default function CartShopping() {
+
+type CartShoppingProps = {
+  onCloseCartHandler : () => void
+}
+
+export default function CartShopping({onCloseCartHandler} : CartShoppingProps) {
   const cartTotal = useAppSelector((state) => state.cart.total);
   const cartItems = useAppSelector((state) => state.cart.items);
   const cartTotalAmount = useAppSelector((state) => state.cart.totalAmount);
@@ -47,6 +52,7 @@ export default function CartShopping() {
             </div>
           </div>
           <Link
+            onClick={() => onCloseCartHandler()}
             href="/checkout"
             className="btn-orange w-full flex justify-center"
           >

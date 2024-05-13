@@ -28,6 +28,10 @@ export default function MainHeader() {
     setCartIsVisible((prev) => !prev);
   }
 
+  function closeCartHandler() {
+    setCartIsVisible(false);
+  }
+
   return (
     <div className="bg-black w-full flex flex-col ">
       <div className="flex w-full  z-10 justify-between items-center px-8  h-24 text-white text-3xl font-bold border-b  border-opacity-30 border-gray-500 max-w-[1100px] mx-auto xl:p-0">
@@ -41,15 +45,19 @@ export default function MainHeader() {
                 menuAnimation ? "translate-y-0" : "-translate-y-[1000px]"
               }`}
             >
-              <CategoriesSection />
+              <CategoriesSection  />
             </div>
           </div>
         )}
 
         {cartIsVisible && (
           <div className="absolute bg-black h-auto bg-opacity-70 text-black left-0 right-0 bottom-0 z-10 top-24 px-10">
-            <div className="absolute right-0 left-0 px-10 text-sm  py-6 md:left-auto md:right-32 ">
-              <CartShopping />
+            <div
+              onClick={closeCartHandler}
+              className="absolute left-0 right-0 bottom-0 top-0 z-10"
+            ></div>
+            <div className="absolute z-20 right-0 left-0 px-10 text-sm  py-6 md:left-auto md:right-32 ">
+              <CartShopping onCloseCartHandler={closeCartHandler} />
             </div>
           </div>
         )}

@@ -17,7 +17,7 @@ export default function MainHero() {
           </Link>
         </div>
         <Image
-          src="/images/image-hero.jpg"
+          src="/images/image-main-hero.jpg"
           className="w-[500px] max-h-[700px] scale-[1.2]  pt-10 "
           alt="hero mobile"
           width={4000}

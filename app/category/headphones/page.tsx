@@ -3,6 +3,7 @@
 import CategoriesSection from "@/components/categories/CategoriesSection";
 import AudioGearHero from "@/components/main/section/AudioGearHero";
 import ProductCard from "@/components/products/ProductCard";
+import LoadingIndicator from "@/components/ui/LoadingIndicator";
 import { getProducts } from "@/components/util/http";
 
 
@@ -40,25 +41,46 @@ export default function HeadPhones() {
 
   const headphones = data?.filter((item)=> item.type === "headphones");
 
-  return (
-    <>
-      <div className="flex flex-col  ">
+  let content;
+
+  if (isPending) {
+    content = (
+      <ul>
+        <LoadingIndicator/>
+      </ul>
+    );
+  }
+
+  if (isError) {
+    content = (
+      <ul>
+        <p>{error.message}</p>
+      </ul>
+    );
+  }
+
+  if (data) {
+    content = (
+      <>
+      <div className="flex flex-col ">
         <h1 className="bg-black text-3xl font-semibold tracking-wider w-full text-center text-white py-8 xl:py-20 ">
-          HEADPHONES
+          EARPHONES
         </h1>
       </div>
-      <div className="max-w-[1300px] mx-auto ">
-        <div className=" ">
-          {headphones?.map((item) => (
+      <div className="max-w-[1400px] mx-auto">
+        <div>
+        {headphones?.map((item) => (
           <ProductCard key={item.id} {...item}/>
           ))}
         </div>
-
-        <div className="px-6  pt-20 md:pt-40">
-          <CategoriesSection />
+        <div className="px-6 pt-40">
+          <CategoriesSection/>
           <AudioGearHero />
         </div>
       </div>
     </>
-  );
+    )
+  }
+
+  return content;
 }

@@ -6,6 +6,7 @@ import { ProductsType } from "../headphones/page";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "@/components/util/http";
 import ProductCard from "@/components/products/ProductCard";
+import LoadingIndicator from "@/components/ui/LoadingIndicator";
 
 export default function Speakers() {
 
@@ -16,11 +17,30 @@ export default function Speakers() {
 
   const speakers = data?.filter((item)=> item.type === "speakers");
 
-  return (
-    <>
+  let content;
+
+  if (isPending) {
+    content = (
+      <ul>
+        <LoadingIndicator/>
+      </ul>
+    );
+  }
+
+  if (isError) {
+    content = (
+      <ul>
+        <p>{error.message}</p>
+      </ul>
+    );
+  }
+
+  if (data) {
+    content = (
+      <>
       <div className="flex flex-col ">
         <h1 className="bg-black text-3xl font-semibold tracking-wider w-full text-center text-white py-8 xl:py-20 ">
-          SPEAKERS
+          EARPHONES
         </h1>
       </div>
       <div className="max-w-[1400px] mx-auto">
@@ -30,10 +50,13 @@ export default function Speakers() {
           ))}
         </div>
         <div className="px-6 pt-40">
-          <CategoriesSection />
+          <CategoriesSection/>
           <AudioGearHero />
         </div>
       </div>
     </>
-  );
+    )
+  }
+
+  return content;
 }

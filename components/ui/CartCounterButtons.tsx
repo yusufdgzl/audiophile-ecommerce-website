@@ -26,6 +26,13 @@ export default function CounterButtons(props: ProductsType) {
     );
   }
 
+  function removeItemHandler() {
+    dispatch(
+      cartSlice.actions.clearItem(props)
+    );
+   console.log(props)
+  }
+
   return (
     <div className="flex flex-col items-end ">
       <div className="bg-gray-200 py-2 px-2 flex justify-around rounded-sm">
@@ -51,7 +58,7 @@ export default function CounterButtons(props: ProductsType) {
           +
         </button>
       </div>
-      <button className="underline opacity-40 hover:text-orange-700">
+      <button onClick={removeItemHandler} className="underline opacity-40 hover:text-orange-700">
         Remove
       </button>
     </div>

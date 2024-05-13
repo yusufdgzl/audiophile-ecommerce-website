@@ -2,6 +2,8 @@
 
 import { useAppSelector } from "@/lib/hooks";
 import CartProductsItem from "./CartProductsItem";
+import { useDispatch } from "react-redux";
+import { cartSlice } from "@/lib/features/cart/cartSlice";
 
 type CartSummaryProps = {
   onSetIsVisibleCompletedCheckout: (prev: boolean) => void;
@@ -11,11 +13,13 @@ export default function CartSummary({onSetIsVisibleCompletedCheckout}:CartSummar
   const cartTotal = useAppSelector((state) => state.cart.total);
   const cartItems = useAppSelector((state) => state.cart.items);
 
+  const dispatch = useDispatch();
   
   const vat = cartTotal * 20 / 100;
 
   function paymentHandler(){
     onSetIsVisibleCompletedCheckout(true);
+    dispatch(cartSlice.actions.clearAllCart());
   }
 
 

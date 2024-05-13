@@ -3,12 +3,20 @@
 import { useAppSelector } from "@/lib/hooks";
 import CartProductsItem from "./CartProductsItem";
 
-export default function CartSummary() {
+type CartSummaryProps = {
+  onSetIsVisibleCompletedCheckout: (prev: boolean) => void;
+};
+
+export default function CartSummary({onSetIsVisibleCompletedCheckout}:CartSummaryProps) {
   const cartTotal = useAppSelector((state) => state.cart.total);
   const cartItems = useAppSelector((state) => state.cart.items);
 
   
   const vat = cartTotal * 20 / 100;
+
+  function paymentHandler(){
+    onSetIsVisibleCompletedCheckout(true);
+  }
 
 
   return (
@@ -37,7 +45,7 @@ export default function CartSummary() {
           <p className="font-semibold text-lg text-orange-600">${(cartTotal + 50 + vat).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
       </div>
-      <button className="btn-orange w-full">CONTINUE & PAY</button>
+      <button onClick={paymentHandler} className="btn-orange w-full">CONTINUE & PAY</button>
     </div>
   );
 }

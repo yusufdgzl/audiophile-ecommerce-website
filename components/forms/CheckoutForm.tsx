@@ -1,9 +1,12 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { IoCashOutline } from "react-icons/io5";
 
+
+
 export default function CheckoutForm() {
+
   const [selectedOption, setSelectedOption] = useState<string>("e-money");
 
   const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -11,8 +14,12 @@ export default function CheckoutForm() {
     console.log(event.target.value);
   };
 
+
   return (
-    <form className="bg-white p-6 md:p-14 md:w-[700px] rounded-xl ">
+    <form
+    
+      className="bg-white p-6 md:p-14 md:w-[700px] rounded-xl "
+    >
       <h2 className="text-3xl font-semibold">CHECKOUT</h2>
       <div>
         <p className="text-[#e58c55] py-6 font-semibold text-sm">
@@ -130,7 +137,6 @@ export default function CheckoutForm() {
             <label
               className="form-label form-input hover:border-orange-500 w-full flex items-center space-x-2 cursor-pointer "
               htmlFor="e-money"
-              
             >
               <input
                 className="w-5 h-5 "
@@ -192,7 +198,11 @@ export default function CheckoutForm() {
         ) : (
           <div className="flex flex-col justify-center items-center space-y-6 py-8 md:flex-row md:space-y-0 md:space-x-6 ">
             <IoCashOutline className="w-10 h-10 md:w-20 md:h-20 text-orange-500" />
-            <p className="opacity-70">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
+            <p className="opacity-70">
+              The ‘Cash on Delivery’ option enables you to pay in cash when our
+              delivery courier arrives at your residence. Just make sure your
+              address is correct so that your order will not be cancelled.
+            </p>
           </div>
         )}
       </div>

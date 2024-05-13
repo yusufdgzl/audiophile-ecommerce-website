@@ -6,7 +6,7 @@ export default function LoadingIndicator() {
   useEffect(() => {
     const timers = setInterval(() => {
       setIsActiveItem((prev) => prev + 1);
-    }, 10);
+    }, 100);
 
     if (isActiveItem === 5) {
       setIsActiveItem(0);
